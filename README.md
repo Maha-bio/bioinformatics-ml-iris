@@ -1,583 +1,456 @@
-Iris Machine Learning Classification**
+# 🧬 Bioinformatics AI/ML – Iris Classification
 
 
+## 📌 Description
 
 
+Ce projet est une introduction pratique à l'utilisation de l'**intelligence artificielle (IA)** et du **machine learning (ML)** en bioinformatique.
 
 
+L'objectif est de construire un premier pipeline de classification permettant de comprendre les principales étapes d'un projet de Machine Learning :
 
 
+- préparation des données
+- exploration des données
+- séparation TRAIN / TEST
+- entraînement d'un modèle
+- prédiction
+- évaluation des performances
+- visualisation des résultats
+- sauvegarde du modèle
 
-Project Overview**
 
-This project is an introductory Machine Learning project focused on the classification of Iris flower species.
+Le projet utilise le célèbre **Iris Dataset**, un jeu de données simple et largement utilisé pour apprendre la classification supervisée.
 
-The objective is to build and evaluate several supervised Machine Learning models capable of predicting the species of an Iris flower from four numerical measurements.
 
-Main objectives**
+---
 
-Explore a biological dataset
 
-Prepare the data for Machine Learning
+## 🎯 Objectifs du projet
 
-Split the data into training and testing sets
 
-Train several classification models
+À travers ce projet, nous allons apprendre à :
 
-Compare model performance
 
-Apply cross-validation
+1. Charger un jeu de données
+2. Explorer et comprendre les données
+3. Préparer les variables pour le Machine Learning
+4. Séparer les données en TRAIN et TEST
+5. Entraîner un premier modèle de classification
+6. Effectuer des prédictions
+7. Évaluer les performances du modèle
+8. Visualiser les résultats
+9. Sauvegarder le modèle
+10. Organiser un projet ML de manière reproductible
 
-Study overfitting
 
-Analyze feature importance
+---
 
-Practice reproducible Machine Learning workflows
 
-Publish the project on GitHub
+## 🧪 Dataset
 
-Objective**
 
-Given four measurements of an Iris flower:
+Le projet utilise le **Iris Dataset**.
 
-Sepal length
 
-Sepal width
+Le dataset contient trois espèces de fleurs :
 
-Petal length
 
-Petal width
+- `setosa`
+- `versicolor`
+- `virginica`
 
-the goal is to predict its species:
 
-Iris setosa
+Chaque observation contient quatre caractéristiques :
 
-Iris versicolor
-
-Iris virginica
-
-The complete workflow is:
-
-**Dataset → EDA → Train/Test Split → Model Training → Evaluation → Cross-Validation → Overfitting Analysis → Interpretation**
-
-Dataset**
-
-This project uses the classic Iris dataset provided by scikit-learn.
-
-Dataset characteristics**
-
-| Property | Value |
-
-|---|---:|
-
-| Samples | 150 |
-
-| Features | 4 |
-
-| Classes | 3 |
-
-| Missing values | None |
-
-Features**
 
 | Feature | Description |
-
 |---|---|
+| `sepal_length` | Longueur du sépale |
+| `sepal_width` | Largeur du sépale |
+| `petal_length` | Longueur du pétale |
+| `petal_width` | Largeur du pétale |
 
-| Sepal length | Length of the sepal in cm |
 
-| Sepal width | Width of the sepal in cm |
+La variable cible correspond à l'espèce de la fleur.
 
-| Petal length | Length of the petal in cm |
 
-| Petal width | Width of the petal in cm |
+---
 
-Target classes**
 
-| Label | Species |
+## 🧠 Machine Learning
 
-|---:|---|
 
-| 0 | Iris setosa |
+Le problème est un problème de **classification supervisée**.
 
-| 1 | Iris versicolor |
 
-| 2 | Iris virginica |
+### Variables d'entrée
 
-Exploratory Data Analysis**
 
-The exploratory analysis includes:
+```text
+sepal_length
+sepal_width
+petal_length
+petal_width
+Variable cible
+species
+Modèle utilisé
 
-Dataset inspection
+Le premier modèle utilisé dans ce projet est :
 
-Descriptive statistics
+Logistic Regression
 
-Feature distributions
+D'autres modèles pourront ensuite être ajoutés :
 
-Feature relationships
+Decision Tree
+Random Forest
+Support Vector Machine
+K-Nearest Neighbors
+Gradient Boosting
+📂 Structure du projet
+iris-ai-ml/
+│
+├── README.md
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│   └── iris_classification.ipynb
+│
+├── src/
+│   ├── data_preprocessing.py
+│   ├── train.py
+│   ├── predict.py
+│   └── evaluate.py
+│
+├── models/
+│   └── iris_model.pkl
+│
+├── results/
+│   ├── figures/
+│   └── metrics/
+│
+├── config/
+│   └── config.yaml
+│
+├── environment.yml
+│
+└── .gitignore
+⚙️ Technologies utilisées
+Programmation
+Python
+Bash
+Data Science
+NumPy
+Pandas
+Matplotlib
+Seaborn
+Machine Learning
+Scikit-learn
+Environnement
+Conda
+Jupyter Notebook
+VS Code
+Git
+GitHub
+🔧 Installation
+1. Cloner le repository
+git clone https://github.com/Maha-bio/iris-ai-ml.git
+cd iris-ai-ml
+2. Créer l'environnement Conda
+conda env create -f environment.yml
+3. Activer l'environnement
+conda activate iris-ml
+4. Lancer Jupyter Notebook
+jupyter notebook
+📊 Workflow du projet
 
-Class distribution
+Le pipeline suit les étapes suivantes :
 
-Visualization of the Iris species
+Dataset
+   │
+   ▼
+Data Exploration
+   │
+   ▼
+Data Preprocessing
+   │
+   ▼
+TRAIN / TEST Split
+   │
+   ├──────────────┐
+   ▼              ▼
+TRAIN            TEST
+   │              │
+   ▼              │
+Model Training    │
+   │              │
+   ▼              │
+Predictions ◄─────┘
+   │
+   ▼
+Evaluation
+   │
+   ▼
+Results
+🧩 Étape 1 – Chargement des données
 
-The analysis shows that petal-related measurements provide strong separation between the three species.
+Le dataset est chargé avec pandas ou directement depuis scikit-learn.
 
-Train/Test Split**
+Exemple :
 
-The dataset was divided into training and testing sets.
+from sklearn.datasets import load_iris
+import pandas as pd
 
-**80% training data:** 120 samples
 
-**20% testing data:** 30 samples
+iris = load_iris()
 
-The split was performed using:
 
-train_test_split(
+X = pd.DataFrame(
+    iris.data,
+    columns=iris.feature_names
+)
+
+
+y = pd.Series(
+    iris.target,
+    name="species"
+)
+
+
+print(X.head())
+print(y.head())
+🧩 Étape 2 – Séparation TRAIN / TEST
+
+Les données sont séparées en deux parties :
+
+80 % TRAIN
+20 % TEST
+from sklearn.model_selection import train_test_split
+
+
+X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
-    test_size=0.2,
+    test_size=0.20,
     random_state=42,
     stratify=y
 )
 
-The test set was kept separate from model training and was used to evaluate performance on unseen samples.
 
-Machine Learning Models
+print("Training:", X_train.shape)
+print("Testing:", X_test.shape)
 
-Four supervised classification algorithms were evaluated.
+Le paramètre random_state=42 permet d'obtenir des résultats reproductibles.
 
-1. Logistic Regression
+🧩 Étape 3 – Entraînement du modèle
 
-Logistic Regression was used as a baseline classification model.
+Le premier modèle utilisé est une régression logistique.
 
-It provides a simple and interpretable model for the classification problem.
+from sklearn.linear_model import LogisticRegression
 
-2. Decision Tree
 
-The Decision Tree learns decision rules from the input features.
+model = LogisticRegression(
+    max_iter=200
+)
 
-It was also used to demonstrate the effect of model complexity and overfitting.
 
-3. K-Nearest Neighbors
+model.fit(X_train, y_train)
+🧩 Étape 4 – Prédiction
 
-K-Nearest Neighbors (KNN) classifies a new observation according to the classes of its nearest neighbors.
+Le modèle peut maintenant prédire les classes du jeu de test.
 
-The model was configured with:
+y_pred = model.predict(X_test)
 
-n_neighbors = 5
 
-4. Random Forest
+print(y_pred)
+🧩 Étape 5 – Évaluation
 
-Random Forest is an ensemble learning algorithm based on multiple decision trees.
+Plusieurs métriques sont utilisées pour évaluer le modèle.
 
-The model was configured with:
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix
+)
 
-n_estimators = 100
 
-Model Evaluation
+accuracy = accuracy_score(
+    y_test,
+    y_pred
+)
 
-The models were evaluated using:
+
+print("Accuracy:", accuracy)
+
+
+print(
+    classification_report(
+        y_test,
+        y_pred
+    )
+)
+
+
+print(
+    confusion_matrix(
+        y_test,
+        y_pred
+    )
+)
+📈 Métriques
+
+Les principales métriques utilisées sont :
 
 Accuracy
 
+Mesure la proportion de prédictions correctes.
+
+Accuracy = nombre de prédictions correctes / nombre total de prédictions
 Precision
+
+Mesure la proportion des prédictions positives qui sont réellement positives.
 
 Recall
 
-F1-score
-
-Confusion matrix
-
-5-fold cross-validation
-
-Accuracy
-
-Accuracy represents the proportion of correctly classified samples:
-
-Accuracy = Correct Predictions / Total Predictions
-
-Precision
-
-Precision measures how many observations predicted as a particular class actually belong to that class.
-
-Recall
-
-Recall measures how many observations belonging to a particular class were correctly identified.
+Mesure la capacité du modèle à identifier correctement les observations d'une classe.
 
 F1-score
 
-F1-score combines precision and recall into a single metric.
+Combine la précision et le rappel.
 
-5-Fold Cross-Validation
+📊 Visualisation
 
-A 5-fold cross-validation strategy was used to obtain a more robust estimate of model performance.
+Les données peuvent être visualisées afin de comprendre la distribution des différentes espèces.
 
-The dataset is divided into five folds:
+Exemple :
 
-Fold 1 → Validation
-Fold 2 → Validation
-Fold 3 → Validation
-Fold 4 → Validation
-Fold 5 → Validation
+import matplotlib.pyplot as plt
 
-Each fold is used once for validation while the remaining folds are used for training.
 
-The mean accuracy and standard deviation were calculated for each model.
+plt.scatter(
+    X.iloc[:, 0],
+    X.iloc[:, 1],
+    c=y
+)
 
-This provides a more reliable estimate of model performance than relying on a single train/test split.
 
-Overfitting Analysis
+plt.xlabel("Sepal length")
+plt.ylabel("Sepal width")
+plt.title("Iris Dataset")
 
-A Decision Tree was used to demonstrate overfitting.
 
-Different tree depths were evaluated by comparing training and testing accuracy.
+plt.show()
+💾 Sauvegarde du modèle
 
-The general behavior is:
+Le modèle entraîné peut être sauvegardé afin d'être réutilisé sans devoir refaire l'entraînement.
 
-Low model complexity
-        ↓
-Underfitting
+import joblib
 
-Optimal complexity
-        ↓
-Good generalization
 
-High model complexity
-        ↓
-Overfitting
+joblib.dump(
+    model,
+    "models/iris_model.pkl"
+)
 
-A highly complex model can achieve very high training accuracy while performing worse on unseen data.
+Pour charger le modèle :
 
-This experiment demonstrates why model complexity must be controlled.
+model = joblib.load(
+    "models/iris_model.pkl"
+)
+🔬 Pourquoi ce projet est intéressant en bioinformatique ?
 
-Feature Importance
+Même si l'Iris Dataset est un exemple simple, le workflow utilisé ici correspond aux grandes étapes que l'on retrouve dans de nombreux projets de bioinformatique et de biologie computationnelle.
 
-Random Forest feature importance was used to investigate which features contributed most to the classification.
+Par exemple :
 
-The four features were:
-
-Sepal length
-
-Sepal width
-
-Petal length
-
-Petal width
-
-Petal-related measurements generally show high importance for distinguishing the Iris species.
-
-Feature importance provides a simple introduction to Machine Learning model interpretability.
-
-Results
-
-The performance of the four models was compared using test-set accuracy and 5-fold cross-validation.
-
-Model
-
-Test Accuracy
-
-Mean CV Accuracy
-
-Logistic Regression
-
-See notebook
-
-See notebook
-
-Decision Tree
-
-See notebook
-
-See notebook
-
-K-Nearest Neighbors
-
-See notebook
-
-See notebook
-
-Random Forest
-
-See notebook
-
-See notebook
-
-The exact results can be found in:
-
-notebooks/02_model_comparison.ipynb
-
-The Iris dataset is small and relatively easy to classify. Therefore, several models can achieve high performance.
-
-The main purpose of this project is to understand the complete Machine Learning workflow rather than simply maximizing accuracy.
-
-Results and Figures
-
-The project generates several figures.
-
-Model Comparison
-
-
-
-Comparison of the classification accuracy of the four Machine Learning models.
-
-Feature Importance
-
-
-
-Feature importance calculated using Random Forest.
-
-Cross-Validation
-
-
-
-Comparison of the mean accuracy obtained using 5-fold cross-validation.
-
-Overfitting
-
-
-
-Comparison of training and testing performance.
-
-Decision Tree Complexity
-
-
-
-Effect of Decision Tree depth on training and testing accuracy.
-
-Project Structure
-
-bioinformatics-ml-iris/
-│
-├── README.md
-├── requirements.txt
-├── .gitignore
-│
-├── data/
-│
-├── notebooks/
-│   ├── 01_iris_exploration.ipynb
-│   └── 02_model_comparison.ipynb
-│
-├── src/
-│   └── train_model.py
-│
-└── results/
-    └── figures/
-        ├── model_comparison.png
-        ├── feature_importance.png
-        ├── cross_validation.png
-        ├── overfitting.png
-        └── decision_tree_overfitting.png
-
-Technologies
-
-Programming
-
-Python 3.11
-
-Data Analysis
-
-NumPy
-
-pandas
-
-Visualization
-
-Matplotlib
-
-Seaborn
-
+Données biologiques
+        │
+        ▼
+Prétraitement
+        │
+        ▼
+Extraction des caractéristiques
+        │
+        ▼
+TRAIN / TEST
+        │
+        ▼
 Machine Learning
-
-scikit-learn
-
-Development
-
-Jupyter Notebook
-
-Ubuntu / WSL
-
-Git
-
-GitHub
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/Maha-bio/bioinformatics-ml-iris.git
-cd bioinformatics-ml-iris
-
-Create a Conda environment:
-
-conda create -n iris-ml python=3.11 -y
-
-Activate the environment:
-
-conda activate iris-ml
-
-Install the dependencies:
-
-pip install -r requirements.txt
-
-How to Run
-
-Launch Jupyter Notebook:
-
-jupyter notebook --no-browser
-
-Open the Jupyter URL in your web browser.
-
-Start with:
-
-notebooks/01_iris_exploration.ipynb
-
-Then run:
-
-notebooks/02_model_comparison.ipynb
-
-The notebooks cover the complete workflow from data exploration to Machine Learning model evaluation.
-
-Key Machine Learning Concepts
-
-This project provides practical experience with:
-
-Supervised learning
-
-Classification
-
-Features and targets
-
-Training and testing datasets
-
-Model fitting
-
-Prediction
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-score
-
-Confusion matrices
-
-Cross-validation
-
-Overfitting
-
-Underfitting
-
-Model complexity
-
-Feature importance
-
-Model comparison
-
-Learning Outcomes
-
-This project provided practical experience with the following Machine Learning workflow:
-
-Problem Definition
-        ↓
-Data Exploration
-        ↓
-Data Preparation
-        ↓
-Train / Test Split
-        ↓
-Model Training
-        ↓
-Prediction
-        ↓
-Evaluation
-        ↓
-Cross-Validation
-        ↓
-Model Comparison
-        ↓
-Overfitting Analysis
-        ↓
-Interpretation
-
-This project serves as a foundation for applying Machine Learning to more complex biomedical and bioinformatics datasets.
-
-Limitations
-
-Although the Iris dataset is useful for learning, it has several limitations:
-
-Small number of samples
-
-Only four features
-
-Clean dataset
-
-No missing values
-
-Relatively easy classification problem
-
-No high-dimensional biological features
-
-Therefore, this project is primarily educational and should not be considered a realistic clinical prediction pipeline.
-
-Future Improvements
-
-Possible extensions include:
-
-Hyperparameter tuning
-
-GridSearchCV
-
-RandomizedSearchCV
-
-ROC curves
-
-AUC comparison
-
-Confusion matrix visualization
-
-Model persistence using joblib
-
-Prediction on new samples
-
-Automated Machine Learning pipelines
-
-Advanced model interpretation
-
-Reproducible workflow automation
-
-🧬 Next Step: Biomedical Machine Learning
-
-This introductory project will serve as a foundation for applying Machine Learning to biomedical and bioinformatics datasets.
-
-The next project will move toward a more realistic biomedical problem:
-
-Biomedical Dataset
-        ↓
-Data Exploration
-        ↓
-Preprocessing
-        ↓
-Feature Selection
-        ↓
+        │
+        ▼
+Prédictions
+        │
+        ▼
+Évaluation
+        │
+        ▼
+Interprétation biologique
+
+Dans un projet réel, les caractéristiques pourraient être :
+
+expression génique
+variants génétiques
+signatures moléculaires
+données transcriptomiques
+données protéomiques
+données de méthylation
+caractéristiques issues du cfDNA
+données single-cell
+🚀 Prochaines étapes
+
+Le projet sera progressivement amélioré avec :
+
+ Exploration complète du dataset
+ Visualisation des données
+ Normalisation des données
+ Logistic Regression
+ Decision Tree
+ Random Forest
+ SVM
+ KNN
+ Comparaison des modèles
+ Cross-validation
+ Hyperparameter tuning
+ Matrice de confusion
+ ROC curve
+ AUC
+ Sauvegarde du meilleur modèle
+ Pipeline Scikit-learn
+ Automatisation avec Snakemake
+ Documentation complète
+ Application du workflow à un dataset biologique réel
+🧬 Vers un projet de bioinformatique réel
+
+L'objectif final est de passer progressivement d'un problème pédagogique simple :
+
+Iris Classification
+
+à un problème de Machine Learning appliqué à la bioinformatique :
+
+Biological Dataset
+        │
+        ▼
+Data Preprocessing
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
 Machine Learning
-        ↓
-Cross-Validation
-        ↓
-Model Evaluation
-        ↓
-Feature Interpretation
-        ↓
-Biological Interpretation
+        │
+        ▼
+Biological Prediction
+        │
+        ▼
+Model Interpretation
 
-The long-term goal is to apply Machine Learning to high-dimensional biological data such as gene expression datasets.
+Ce projet constitue donc une première étape vers le développement de pipelines reproductibles d'IA/ML appliqués aux données biologiques.
 
-Author
+👩‍💻 Auteur
 
-Maha Abbaci
+Maha-bio
 
-Bioinformatics | Biomedical Data Analysis | Machine Learning
-
-GitHub: Maha-bio
+Bioinformatics | Data Science | AI/ML | Computational Biology
