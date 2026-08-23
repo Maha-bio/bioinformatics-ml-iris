@@ -225,7 +225,7 @@ Results
 
 #  Étapes du projet
 
-## 1️⃣ Chargement des données
+## 1. Chargement des données
 
 Le dataset est chargé directement à partir de `scikit-learn`.
 
@@ -251,7 +251,7 @@ print(y.head())
 
 ---
 
-## 2️⃣ Séparation TRAIN / TEST
+## 2. Séparation TRAIN / TEST
 
 Les données sont séparées en deux ensembles :
 
@@ -279,7 +279,7 @@ Le paramètre `stratify=y` permet de conserver une répartition similaire des cl
 
 ---
 
-## 3️⃣ Entraînement du modèle
+## 3. Entraînement du modèle
 
 Le premier modèle utilisé est une **régression logistique**.
 
@@ -295,7 +295,7 @@ model.fit(X_train, y_train)
 
 ---
 
-## 4️⃣ Prédiction
+## 4. Prédiction
 
 Une fois le modèle entraîné, il peut prédire les classes du jeu de test.
 
@@ -307,7 +307,7 @@ print(y_pred)
 
 ---
 
-## 5️⃣ Évaluation
+## 5. Évaluation
 
 Plusieurs métriques sont utilisées pour évaluer les performances du modèle.
 
@@ -432,7 +432,7 @@ Dans un projet de bioinformatique réel, les caractéristiques utilisées pour l
 
 ---
 
-# 📌 Résultats attendus
+# Résultats attendus
 
 À la fin du projet, nous disposerons de :
 
@@ -447,7 +447,7 @@ Dans un projet de bioinformatique réel, les caractéristiques utilisées pour l
 
 ---
 
-# 👩‍💻 Auteur
+# Auteur
 
 **Maha Abbaci**
 
@@ -456,6 +456,6 @@ GitHub: https://github.com/Maha-bio
 
 ---
 
-# 📜 Licence
+# Licence
 
 This project is intended for academic, research and educational purposes.
