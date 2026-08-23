@@ -1,77 +1,104 @@
-Bioinformatics AI/ML – Iris Classification
- Description
+#  Bioinformatics AI/ML – Iris Classification
 
-Ce projet est une introduction pratique à l'utilisation de l'intelligence artificielle (IA) et du Machine Learning (ML) en bioinformatique.
+##  Description
+
+Ce projet est une introduction pratique à l'utilisation de l'**intelligence artificielle (IA)** et du **Machine Learning (ML)** en bioinformatique.
 
 L'objectif est de construire un premier pipeline de classification permettant de comprendre les principales étapes d'un projet de Machine Learning :
 
-Préparation des données
-Exploration des données
-Séparation des données en TRAIN / TEST
-Entraînement des modèles
-Prédiction
-Évaluation des performances
-Visualisation des résultats
-Comparaison des modèles
-Sauvegarde du modèle
-Reproductibilité du projet
+- Préparation des données
+- Exploration des données
+- Séparation des données en **TRAIN / TEST**
+- Entraînement des modèles
+- Prédiction
+- Évaluation des performances
+- Visualisation des résultats
+- Comparaison des modèles
+- Sauvegarde du modèle
+- Reproductibilité du projet
 
-Le projet utilise le célèbre Iris Dataset, un jeu de données simple et largement utilisé pour apprendre les concepts fondamentaux de la classification supervisée.
+Le projet utilise le célèbre **Iris Dataset**, un jeu de données simple et largement utilisé pour apprendre les concepts fondamentaux de la classification supervisée.
 
- Objectifs du projet
+---
+
+##  Objectifs du projet
 
 À travers ce projet, nous allons apprendre à :
 
-Charger un jeu de données
-Explorer et comprendre les données
-Préparer les variables pour le Machine Learning
-Séparer les données en ensembles TRAIN et TEST
-Entraîner différents modèles de classification
-Effectuer des prédictions
-Évaluer les performances des modèles
-Comparer les modèles
-Visualiser les résultats
-Sauvegarder le meilleur modèle
-Organiser un projet ML de manière reproductible
- Dataset
+1. Charger un jeu de données
+2. Explorer et comprendre les données
+3. Préparer les variables pour le Machine Learning
+4. Séparer les données en ensembles **TRAIN** et **TEST**
+5. Entraîner différents modèles de classification
+6. Effectuer des prédictions
+7. Évaluer les performances des modèles
+8. Comparer les modèles
+9. Visualiser les résultats
+10. Sauvegarder le meilleur modèle
+11. Organiser un projet ML de manière reproductible
 
-Le projet utilise le Iris Dataset.
+---
+
+##  Dataset
+
+Le projet utilise le **Iris Dataset**.
+
+###  Espèces
 
 Le dataset contient trois espèces de fleurs :
 
-setosa
-versicolor
-virginica
+- `setosa`
+- `versicolor`
+- `virginica`
+
+###  Caractéristiques
 
 Chaque observation contient quatre caractéristiques :
 
-Feature	Description
-sepal_length	Longueur du sépale
-sepal_width	Largeur du sépale
-petal_length	Longueur du pétale
-petal_width	Largeur du pétale
+| Feature | Description |
+|---|---|
+| `sepal_length` | Longueur du sépale |
+| `sepal_width` | Largeur du sépale |
+| `petal_length` | Longueur du pétale |
+| `petal_width` | Largeur du pétale |
 
 La variable cible correspond à l'espèce de la fleur.
 
- Machine Learning
+---
 
-Le problème traité est un problème de classification supervisée.
+##  Machine Learning
 
-Variables d'entrée
+Le problème traité est un problème de **classification supervisée**.
+
+### Variables d'entrée
+
+```text
 sepal_length
 sepal_width
 petal_length
 petal_width
-Variable cible
+```
+
+### Variable cible
+
+```text
 species
-Modèles étudiés
-Logistic Regression
-Decision Tree
-Random Forest
-Support Vector Machine (SVM)
-K-Nearest Neighbors (KNN)
-Gradient Boosting
- Structure du projet
+```
+
+### Modèles étudiés
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
+- Gradient Boosting
+
+---
+
+##  Structure du projet
+
+```text
 iris-ai-ml/
 │
 ├── README.md
@@ -100,37 +127,72 @@ iris-ai-ml/
 │
 └── config/
     └── config.yaml
- Technologies utilisées
- Programmation
-Python
-Bash
- Data Science
-NumPy
-Pandas
-Matplotlib
-Seaborn
- Machine Learning
-Scikit-learn
- Environnement et outils
-Conda
-Jupyter Notebook
-VS Code
-Git
-GitHub
- Installation
-1. Cloner le repository
-git clone https://github.com/Maha-bio/iris-ai-ml.git
-cd iris-ai-ml
-2. Créer l'environnement Conda
+```
+
+---
+
+##  Technologies utilisées
+
+###  Programmation
+
+- Python
+- Bash
+
+###  Data Science
+
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+
+###  Machine Learning
+
+- Scikit-learn
+
+###  Environnement et outils
+
+- Conda
+- Jupyter Notebook
+- VS Code
+- Git
+- GitHub
+
+---
+
+##  Installation
+
+### 1. Cloner le repository
+
+```bash
+git clone https://github.com/Maha-bio/bioinformatics-ml-iris.git
+cd bioinformatics-ml-iris
+```
+
+### 2. Créer l'environnement Conda
+
+```bash
 conda env create -f environment.yml
-3. Activer l'environnement
+```
+
+### 3. Activer l'environnement
+
+```bash
 conda activate iris-ml
-4. Lancer Jupyter Notebook
+```
+
+### 4. Lancer Jupyter Notebook
+
+```bash
 jupyter notebook
- Workflow du projet
+```
+
+---
+
+##  Workflow du projet
 
 Le pipeline suit les principales étapes d'un projet de Machine Learning :
 
+```text
 Dataset
    │
    ▼
@@ -144,7 +206,7 @@ TRAIN / TEST Split
    │
    ├──────────────┐
    ▼              ▼
-TRAIN            TEST
+ TRAIN           TEST
    │              │
    ▼              │
 Model Training    │
@@ -157,40 +219,47 @@ Evaluation
    │
    ▼
 Results
- Étapes du projet
-  Étape 1 – Chargement des données
+```
 
-Le dataset est chargé directement à partir de scikit-learn.
+---
 
+#  Étapes du projet
+
+## 1️⃣ Chargement des données
+
+Le dataset est chargé directement à partir de `scikit-learn`.
+
+```python
 from sklearn.datasets import load_iris
 import pandas as pd
 
-
 iris = load_iris()
-
 
 X = pd.DataFrame(
     iris.data,
     columns=iris.feature_names
 )
 
-
 y = pd.Series(
     iris.target,
     name="species"
 )
 
-
 print(X.head())
 print(y.head())
- Étape 2 – Séparation TRAIN / TEST
+```
+
+---
+
+## 2️⃣ Séparation TRAIN / TEST
 
 Les données sont séparées en deux ensembles :
 
-80 % pour l'entraînement
-20 % pour le test
-from sklearn.model_selection import train_test_split
+- **80 % pour l'entraînement**
+- **20 % pour le test**
 
+```python
+from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
     X,
@@ -200,54 +269,61 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y
 )
 
-
 print("Training:", X_train.shape)
 print("Testing:", X_test.shape)
+```
 
-Le paramètre random_state=42 permet d'obtenir des résultats reproductibles.
+Le paramètre `random_state=42` permet d'obtenir des résultats reproductibles.
 
-Le paramètre stratify=y permet de conserver une répartition similaire des classes dans les ensembles TRAIN et TEST.
+Le paramètre `stratify=y` permet de conserver une répartition similaire des classes dans les ensembles TRAIN et TEST.
 
- Étape 3 – Entraînement du modèle
+---
 
-Le premier modèle utilisé est une régression logistique.
+## 3️⃣ Entraînement du modèle
 
+Le premier modèle utilisé est une **régression logistique**.
+
+```python
 from sklearn.linear_model import LogisticRegression
-
 
 model = LogisticRegression(
     max_iter=200
 )
 
-
 model.fit(X_train, y_train)
- Étape 4 – Prédiction
+```
+
+---
+
+## 4️⃣ Prédiction
 
 Une fois le modèle entraîné, il peut prédire les classes du jeu de test.
 
+```python
 y_pred = model.predict(X_test)
 
-
 print(y_pred)
- Étape 5 – Évaluation
+```
+
+---
+
+## 5️⃣ Évaluation
 
 Plusieurs métriques sont utilisées pour évaluer les performances du modèle.
 
+```python
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
     confusion_matrix
 )
 
-
 accuracy = accuracy_score(
     y_test,
     y_pred
 )
 
-
 print("Accuracy:", accuracy)
-
 
 print(
     classification_report(
@@ -256,41 +332,51 @@ print(
     )
 )
 
-
 print(
     confusion_matrix(
         y_test,
         y_pred
     )
 )
- Métriques d'évaluation
-Accuracy
+```
+
+---
+
+#  Métriques d'évaluation
+
+## Accuracy
 
 L'accuracy mesure la proportion de prédictions correctement classées.
 
+```text
 Accuracy =
 Nombre de prédictions correctes
 --------------------------------
 Nombre total de prédictions
-Precision
+```
 
-La précision mesure la proportion des prédictions positives qui sont réellement positives.
+## Precision
 
-Recall
+La **precision** mesure la proportion des prédictions positives qui sont réellement positives.
 
-Le recall mesure la capacité du modèle à identifier correctement les observations appartenant à une classe.
+## Recall
 
-F1-score
+Le **recall** mesure la capacité du modèle à identifier correctement les observations appartenant à une classe.
 
-Le F1-score combine la precision et le recall afin de fournir une mesure globale des performances du modèle.
+## F1-score
 
- Visualisation des données
+Le **F1-score** combine la precision et le recall afin de fournir une mesure globale des performances du modèle.
+
+---
+
+#  Visualisation des données
 
 Les données peuvent être visualisées afin de mieux comprendre la distribution des différentes espèces.
 
-Exemple
-import matplotlib.pyplot as plt
+### Exemple
 
+```python
+import matplotlib.pyplot as plt
 
 plt.scatter(
     X.iloc[:, 0],
@@ -298,27 +384,78 @@ plt.scatter(
     c=y
 )
 
-
 plt.xlabel("Sepal length")
 plt.ylabel("Sepal width")
 plt.title("Iris Dataset")
 
-
 plt.show()
- Sauvegarde du modèle
+```
+
+---
+
+#  Sauvegarde du modèle
 
 Le modèle entraîné peut être sauvegardé afin d'être réutilisé ultérieurement sans devoir refaire l'entraînement.
 
+```python
 import joblib
-
 
 joblib.dump(
     model,
     "models/iris_model.pkl"
 )
+```
 
-Pour charger le modèle :
+### Charger le modèle
 
+```python
 model = joblib.load(
     "models/iris_model.pkl"
 )
+```
+
+
+
+Dans un projet de bioinformatique réel, les caractéristiques utilisées pour le Machine Learning pourraient être :
+
+- Expression génique
+- Variants génétiques
+- Signatures moléculaires
+- Données transcriptomiques
+- Données protéomiques
+- Données de méthylation
+- Caractéristiques issues du cfDNA
+- Données single-cell
+
+---
+
+
+---
+
+# 📌 Résultats attendus
+
+À la fin du projet, nous disposerons de :
+
+- Un dataset correctement préparé
+- Un ensemble TRAIN / TEST
+- Plusieurs modèles de classification
+- Des métriques de performance
+- Des visualisations
+- Un modèle entraîné sauvegardé
+- Une structure de projet reproductible
+- Une base pour développer des projets de Machine Learning en bioinformatique
+
+---
+
+# 👩‍💻 Auteur
+
+**Maha Abbaci**
+
+*Bioinformatics | Computational Biology| AI/ML *
+GitHub: https://github.com/Maha-bio
+
+---
+
+# 📜 Licence
+
+This project is intended for academic, research and educational purposes.
