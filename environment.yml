@@ -1,0 +1,18 @@
+name: iris-ml
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - joblib
+  - jupyter
+  - notebook
+  - ipykernel
+  - pip

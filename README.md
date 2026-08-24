@@ -92,36 +92,27 @@ species
 - Logistic Regression
 - Decision Tree
 - Random Forest
-- Support Vector Machine (SVM)
 - K-Nearest Neighbors (KNN)
-- Gradient Boosting
+
 
 ---
 
 ## Project Structure
 
 ```text
-iris-ai-ml/
+bioinformatics-ml-iris/
 │
 ├── README.md
 ├── environment.yml
 ├── .gitignore
 │
-├── data/
-│   ├── raw/
-│   └── processed/
+├── data
 │
 ├── notebooks/
-│   └── iris_classification.ipynb
-│
+│   └── 01_iris_exploration.ipynb
+│   └──02_model_comparison.ipynb
 ├── src/
-│   ├── data_preprocessing.py
-│   ├── train.py
-│   ├── predict.py
-│   └── evaluate.py
-│
-├── models/
-│   └── iris_model.pkl
+│   └── train_model.py
 │
 ├── results/
 │   ├── figures/
@@ -572,36 +563,27 @@ species
 - Logistic Regression
 - Decision Tree
 - Random Forest
-- Support Vector Machine (SVM)
 - K-Nearest Neighbors (KNN)
-- Gradient Boosting
+
 
 ---
 
 ##  Structure du projet
 
 ```text
-iris-ai-ml/
+bioinformatics-ml-iris/
 │
 ├── README.md
 ├── environment.yml
 ├── .gitignore
 │
-├── data/
-│   ├── raw/
-│   └── processed/
+├── data
 │
 ├── notebooks/
-│   └── iris_classification.ipynb
-│
+│   └── 01_iris_exploration.ipynb
+│   └──02_model_comparison.ipynb
 ├── src/
-│   ├── data_preprocessing.py
-│   ├── train.py
-│   ├── predict.py
-│   └── evaluate.py
-│
-├── models/
-│   └── iris_model.pkl
+│   └── train_model.py
 │
 ├── results/
 │   ├── figures/
@@ -942,4 +924,3 @@ GitHub: https://github.com/Maha-bio
 # Licence
 
 This project is intended for academic, research and educational purposes.
-
