@@ -16,7 +16,6 @@ The goal is to build a first classification pipeline to understand the main step
 - Performance evaluation
 - Results visualization
 - Model comparison
-- Model saving
 - Project reproducibility
 
 The project uses the well-known **Iris Dataset**, a simple dataset widely used to learn the fundamentals of supervised classification.
@@ -386,26 +385,6 @@ plt.show()
 
 ---
 
-# Model Saving
-
-The trained model can be saved so that it can be reused later without retraining.
-
-```python
-import joblib
-
-joblib.dump(
-    model,
-    "models/iris_model.pkl"
-)
-```
-
-### Loading the Model
-
-```python
-model = joblib.load(
-    "models/iris_model.pkl"
-)
-```
 
 ---
 
@@ -487,7 +466,6 @@ L'objectif est de construire un premier pipeline de classification permettant de
 - Évaluation des performances
 - Visualisation des résultats
 - Comparaison des modèles
-- Sauvegarde du modèle
 - Reproductibilité du projet
 
 Le projet utilise le célèbre **Iris Dataset**, un jeu de données simple et largement utilisé pour apprendre les concepts fondamentaux de la classification supervisée.
@@ -857,28 +835,7 @@ plt.show()
 
 ---
 
-#  Sauvegarde du modèle
-
-Le modèle entraîné peut être sauvegardé afin d'être réutilisé ultérieurement sans devoir refaire l'entraînement.
-
-```python
-import joblib
-
-joblib.dump(
-    model,
-    "models/iris_model.pkl"
-)
-```
-
-### Charger le modèle
-
-```python
-model = joblib.load(
-    "models/iris_model.pkl"
-)
-```
-
-
+---
 
 Dans un projet de bioinformatique réel, les caractéristiques utilisées pour le Machine Learning pourraient être :
 
